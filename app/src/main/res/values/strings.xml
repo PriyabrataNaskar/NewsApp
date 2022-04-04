@@ -9,4 +9,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="author_name">Author Name</string>
+    <string name="post_time">2 hours ago</string>
+    <string name="news_image">News Image</string>
 </resources>

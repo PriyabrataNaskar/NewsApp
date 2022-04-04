@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidInterviewProjects/NewsApp/app/src/main/res/drawable/ic_share.xml" value="0.121" />
         <entry key="..\:/AndroidInterviewProjects/NewsApp/app/src/main/res/layout/content_main.xml" value="0.13677536231884058" />
         <entry key="..\:/AndroidInterviewProjects/NewsApp/app/src/main/res/layout/fragment_news_details.xml" value="0.10989583333333333" />
+        <entry key="..\:/AndroidInterviewProjects/NewsApp/app/src/main/res/layout/item_news_card.xml" value="0.22826086956521738" />
       </map>
     </option>
   </component>
