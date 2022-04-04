@@ -5,6 +5,7 @@
     android:layout_height="200dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="8dp"
+    android:padding="8dp"
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,15 +21,15 @@
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_vertical_50"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintGuide_percent=".5" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_vertical_92"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintGuide_percent=".92" />
 
@@ -49,7 +50,7 @@
             android:layout_marginEnd="8dp"
             android:contentDescription="@string/news_image"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"
+            tools:src="@mipmap/ic_launcher"
             app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_50"
             app:layout_constraintEnd_toEndOf="@id/guideline_vertical_50"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +65,10 @@
             android:maxLines="4"
             tools:text="Strong evidence found for a new force of NATURE"
             android:textSize="18sp"
+            android:gravity="start|top"
             app:layout_constraintEnd_toStartOf="@id/guideline_vertical_92"
             app:layout_constraintStart_toStartOf="@id/guideline_vertical_50"
+            app:layout_constraintBottom_toTopOf="@id/description_text"
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
