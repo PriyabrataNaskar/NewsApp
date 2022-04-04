@@ -1,4 +1,6 @@
-package com.priyo.newsapp
+package com.priyo.newsapp.model
+
+import com.priyo.newsapp.model.Article
 
 data class ResponseModel(
     val articles: List<Article>,

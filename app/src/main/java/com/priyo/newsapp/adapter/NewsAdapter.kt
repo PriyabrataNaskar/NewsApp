@@ -1,4 +1,4 @@
-package com.priyo.newsapp
+package com.priyo.newsapp.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.priyo.newsapp.databinding.ItemNewsCardBinding
+import com.priyo.newsapp.model.Article
 
 /**
  * Created by Priyabrata Naskar on 04-04-2022.

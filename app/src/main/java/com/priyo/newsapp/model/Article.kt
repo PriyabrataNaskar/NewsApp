@@ -1,4 +1,4 @@
-package com.priyo.newsapp
+package com.priyo.newsapp.model
 
 data class Article(
     val author: String,

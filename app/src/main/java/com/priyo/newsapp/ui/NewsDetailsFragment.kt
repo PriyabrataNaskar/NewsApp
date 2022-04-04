@@ -1,4 +1,4 @@
-package com.priyo.newsapp
+package com.priyo.newsapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
