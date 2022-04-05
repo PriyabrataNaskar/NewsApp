@@ -1,22 +1,27 @@
-package com.priyo.newsapp.ui
+package com.priyo.newsapp.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import android.view.Menu
+import android.view.MenuItem
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import androidx.navigation.fragment.NavHostFragment
 import com.priyo.newsapp.R
 import com.priyo.newsapp.databinding.ActivityMainBinding
+import com.priyo.newsapp.model.repository.NewsRepository
+import com.priyo.newsapp.viewmodel.NewsViewModel
+import com.priyo.newsapp.viewmodel.NewsViewModelProviderFactory
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+    lateinit var viewModel: NewsViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -34,6 +39,11 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener { view ->
             //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
         }
+
+        //view model and repository
+        val newsRepository = NewsRepository()
+        val viewModelProviderFactory = NewsViewModelProviderFactory(newsRepository)
+        viewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

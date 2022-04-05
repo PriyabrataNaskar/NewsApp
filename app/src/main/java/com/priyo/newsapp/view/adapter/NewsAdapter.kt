@@ -1,4 +1,4 @@
-package com.priyo.newsapp.adapter
+package com.priyo.newsapp.view.adapter
 
 import android.content.Context
 import android.content.Intent
