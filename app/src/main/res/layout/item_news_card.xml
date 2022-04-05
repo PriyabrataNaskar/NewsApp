@@ -5,7 +5,7 @@
     android:layout_height="200dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="8dp"
-    android:padding="8dp"
+    android:padding="12dp"
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -70,11 +70,11 @@ class NewsAdapter(private val mNewsData: List<Article>, mContext: Context) :
             if (view.id == itemView.id) {
                 val news: Article = mNewsData[adapterPosition]
 
-                val newsAuthorName: String = news.author
-                val newsTitle: String = news.title
-                val newsDescription: String = news.description
-                val newsImageResource: String = news.urlToImage
-                val newsPublishTime: String = news.publishedAt
+                val newsAuthorName: String? = news.author
+                val newsTitle: String? = news.title
+                val newsDescription: String? = news.description
+                val newsImageResource: String? = news.urlToImage
+                val newsPublishTime: String? = news.publishedAt
                 val content: String? = news.content
                 // Create an nav direction with a destination
                 // Add the news details to the nav direction
@@ -103,9 +103,9 @@ class NewsAdapter(private val mNewsData: List<Article>, mContext: Context) :
         fun bindTo(currentNews: Article) {
             mNewsTitleText.text = currentNews.title
             mAuthorTitle.text = currentNews.author
-            mDescription.text =
-                Html.fromHtml(currentNews.description, Html.FROM_HTML_MODE_LEGACY)
-                    .toString()
+            mDescription.text = currentNews.description
+//                Html.fromHtml(currentNews.description, Html.FROM_HTML_MODE_LEGACY)
+//                    .toString()
 
             // Load the images into the ImageView using the Glide library.
             Glide.with(mContext).load(currentNews.urlToImage).into(mNewsImage)
