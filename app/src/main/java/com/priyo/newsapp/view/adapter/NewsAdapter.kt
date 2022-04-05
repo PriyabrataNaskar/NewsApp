@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.priyo.newsapp.databinding.ItemNewsCardBinding
 import com.priyo.newsapp.model.Article
+import com.priyo.newsapp.view.NewsListFragmentDirections
 
 /**
  * Created by Priyabrata Naskar on 04-04-2022.
@@ -74,15 +76,18 @@ class NewsAdapter(private val mNewsData: List<Article>, mContext: Context) :
                 val newsImageResource: String = news.urlToImage
                 val newsPublishTime: String = news.publishedAt
                 val content: String? = news.content
+                // Create an nav direction with a destination
+                // Add the news details to the nav direction
+                val action = NewsListFragmentDirections.actionNewsListFragmentToNewsDetailsFragment(
+                    authorName = newsAuthorName,
+                    newsTitle = newsTitle,
+                    newsDescription = newsDescription,
+                    newsImageResource = newsImageResource,
+                    newsPublishTime = newsPublishTime,
+                    content = content
+                )
+                view.findNavController().navigate(action)
 
-//                val intent = Intent(view.getContext(), NewsDetailsActivity::class.java)
-//                intent.putExtra("author", newsAuthorName)
-//                intent.putExtra("title", newsTitle)
-//                intent.putExtra("description", newsDescription)
-//                intent.putExtra("urlToImage", newsImageResource)
-//                intent.putExtra("publishedAt", newsPublishTime)
-//                intent.putExtra("content", content)
-//                view.getContext().startActivity(intent)
             } else if (view.id == shareButton.id) {
                 val shareIntent = Intent(Intent.ACTION_SEND)
 

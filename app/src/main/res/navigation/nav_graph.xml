@@ -20,5 +20,30 @@
         android:id="@+id/NewsDetailsFragment"
         android:name="com.priyo.newsapp.view.NewsDetailsFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_news_details"></fragment>
+        tools:layout="@layout/fragment_news_details">
+        <argument
+            android:name="authorName"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="newsTitle"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="newsDescription"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="newsImageResource"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="newsPublishTime"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="content"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

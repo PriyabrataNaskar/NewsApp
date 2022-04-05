@@ -33,7 +33,6 @@ class NewsListFragment : Fragment() {
 
     // Member variables.
     private var mRecyclerView: RecyclerView? = null
-    private var mNewsData: List<Article>? = null
     private var mAdapter: NewsAdapter? = null
 
     private lateinit var viewModel: NewsViewModel
@@ -62,6 +61,7 @@ class NewsListFragment : Fragment() {
             when(response){
                 is Resource.Success ->{
                     hideProgressBar()
+                    hideError()
                     response.data?.let {
                         mAdapter = NewsAdapter(response.data.articles, requireContext())
                         setRecyclerView(response.data.articles)
@@ -69,18 +69,29 @@ class NewsListFragment : Fragment() {
                 }
                 is Resource.Error ->{
                     hideProgressBar()
+                    showError()
                     response.message?.let { message->
                         Log.e("NewsFragment", message)
+                        showError()
                     }
                 }
                 is Resource.Loading ->{
-                    showRogressBar()
+                    showProgressBar()
+                    hideError()
                 }
             }
 
         })
     }
-    private fun showRogressBar() {
+
+    private fun showError() {
+    }
+
+    private fun hideError() {
+    }
+
+    private fun showProgressBar() {
+
     }
 
     private fun hideProgressBar() {
