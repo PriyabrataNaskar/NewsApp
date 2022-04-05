@@ -31,7 +31,7 @@ class NewsListFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    // Member variables.
+    // Member variables
     private var mRecyclerView: RecyclerView? = null
     private var mAdapter: NewsAdapter? = null
 
@@ -91,10 +91,11 @@ class NewsListFragment : Fragment() {
     }
 
     private fun showProgressBar() {
-
+        binding.shimmerView.startShimmer()
     }
 
     private fun hideProgressBar() {
+        binding.shimmerView.stopShimmer()
     }
 
     private fun setRecyclerView(list: List<Article>){

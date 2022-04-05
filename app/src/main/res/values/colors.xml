@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="brand_color">#D1A595</color>
     <color name="toolbar_color">#fafafa</color>
+
+    <color name="shimmer_placeholder">#dddddd</color>
 </resources>
