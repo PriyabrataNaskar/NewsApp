@@ -13,4 +13,6 @@
     <string name="author_name">Author Name</string>
     <string name="post_time">2 hours ago</string>
     <string name="news_image">News Image</string>
+
+    <string name="api_key">84a9ce0f3b9040bf8edf144d10a95708</string>
 </resources>
