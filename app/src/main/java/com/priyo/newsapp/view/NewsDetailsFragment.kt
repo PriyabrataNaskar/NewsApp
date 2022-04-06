@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.priyo.newsapp.R
 import com.priyo.newsapp.databinding.FragmentNewsDetailsBinding
 import com.priyo.newsapp.model.data.Article
 
@@ -64,7 +65,7 @@ class NewsDetailsFragment : Fragment() {
         binding.contentDescription.text = newsDescription
         binding.newsArticleText.text = content
         binding.newsMetaData.text = "$newsAuthorName $newsPublishTime"
-        Glide.with(this).load(newsImageResource).centerCrop().into(binding.newsImageDetail)
+        Glide.with(this).load(newsImageResource).centerCrop().placeholder(R.drawable.ic_placeholder_image).centerCrop().into(binding.newsImageDetail)
     }
 
     override fun onDestroyView() {

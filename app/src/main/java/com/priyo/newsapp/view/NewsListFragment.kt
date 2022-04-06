@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.priyo.newsapp.R
 import com.priyo.newsapp.view.adapter.NewsAdapter
 import com.priyo.newsapp.databinding.FragmentNewsListBinding
 import com.priyo.newsapp.model.data.Article
@@ -21,6 +22,7 @@ import com.priyo.newsapp.viewmodel.NewsViewModel
  */
 class NewsListFragment : Fragment() {
 
+    private val TAG: String = "NewsListFragment"
     private var _binding: FragmentNewsListBinding? = null
 
     // This property is only valid between onCreateView and
@@ -43,7 +45,6 @@ class NewsListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewModel = (activity as MainActivity).viewModel
 
         observeLiveData()
@@ -56,6 +57,7 @@ class NewsListFragment : Fragment() {
         viewModel.topNews.observe(viewLifecycleOwner, Observer {response->
             when(response){
                 is Resource.Success ->{
+                    Log.e(TAG, "Success")
                     hideProgressBar()
                     hideError()
                     response.data?.let {
@@ -64,14 +66,14 @@ class NewsListFragment : Fragment() {
                     }
                 }
                 is Resource.Error ->{
-                    hideProgressBar()
                     showError()
+                    hideProgressBar()
                     response.message?.let { message->
-                        Log.e("NewsFragment", message)
-                        showError()
+                        Log.e("NewsFragment", "Error: $message")
                     }
                 }
                 is Resource.Loading ->{
+                    Log.d(TAG, "Loading")
                     showProgressBar()
                     hideError()
                 }
@@ -81,17 +83,23 @@ class NewsListFragment : Fragment() {
     }
 
     private fun showError() {
+        binding.errorAnim.visibility = View.VISIBLE
+        binding.errorAnim.playAnimation()
     }
 
     private fun hideError() {
+        binding.errorAnim.cancelAnimation()
+        binding.errorAnim.visibility = View.GONE
     }
 
     private fun showProgressBar() {
+        binding.shimmerView.visibility = View.VISIBLE
         binding.shimmerView.startShimmer()
     }
 
     private fun hideProgressBar() {
         binding.shimmerView.stopShimmer()
+        binding.shimmerView.visibility = View.GONE
     }
 
     private fun setRecyclerView(list: List<Article>){

@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.priyo.newsapp.R
 import com.priyo.newsapp.databinding.ItemNewsCardBinding
 import com.priyo.newsapp.model.data.Article
 import com.priyo.newsapp.view.NewsListFragmentDirections
@@ -107,7 +108,7 @@ class NewsAdapter(private val mNewsData: List<Article>, mContext: Context) :
 //                    .toString()
 
             // Load the images into the ImageView using the Glide library.
-            Glide.with(mContext).load(currentNews.urlToImage).into(mNewsImage)
+            Glide.with(mContext).load(currentNews.urlToImage).placeholder(R.drawable.ic_placeholder_image).centerCrop().into(mNewsImage)
         }
     }
 }
