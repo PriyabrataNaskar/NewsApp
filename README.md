@@ -12,6 +12,12 @@ A MVVM architecture based News App in android, developed with Kotlin, Retrofit, 
 
 ### See the video [here](https://www.figma.com/proto/0hqmot7drKti1znfOZV4Q1/News-App?node-id=6%3A81&scaling=scale-down&page-id=0%3A1&starting-point-node-id=6%3A81)
 
+### In this News App - Pigeon: You can : 
+
+- Skim through Top Headlines in a RecyclerView
+- Open Each News and Share that news with your friend
+- See a nice animated dragon who is showing you the error
+
 ### You can view the design in [Figma Prototype](https://www.figma.com/proto/0hqmot7drKti1znfOZV4Q1/News-App?node-id=6%3A81&scaling=scale-down&page-id=0%3A1&starting-point-node-id=6%3A81)
 
 All the news are fetched from the news api. If you're cloning this project in your own machine don't forget to modify the ```API KEY```. You will get a new API Key on the [NEWS API](https://newsapi.org) website
