@@ -96,19 +96,11 @@
                         android:id="@+id/share_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".1"
+                        android:layout_weight=".2"
                         android:button="@drawable/ic_share"
                         android:buttonTint="@color/brand_color"
                         android:gravity="center_vertical|end" />
 
-                    <CheckBox
-                        android:id="@+id/wp_share_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".1"
-                        android:button="@drawable/ic_share"
-                        android:buttonTint="@color/brand_color"
-                        android:gravity="center_vertical|end" />
                 </LinearLayout>
 
                 <TextView

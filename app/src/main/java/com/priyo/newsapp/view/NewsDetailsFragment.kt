@@ -1,5 +1,6 @@
 package com.priyo.newsapp.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +25,6 @@ class NewsDetailsFragment : Fragment() {
     }
 
     private var _binding: FragmentNewsDetailsBinding? = null
-    private var article: Article? = null
 
     private var newsAuthorName: String? = null
     private var newsTitle: String? = null
@@ -55,6 +55,16 @@ class NewsDetailsFragment : Fragment() {
     ): View? {
 
         _binding = FragmentNewsDetailsBinding.inflate(inflater, container, false)
+
+        binding.shareButton.setOnClickListener{
+            val shareIntent = Intent(Intent.ACTION_SEND)
+
+            //Intent shareIntent = new Intent();
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "$newsTitle \nDescription:$newsDescription \nby- $newsAuthorName $newsImageResource")
+            //shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            context?.startActivity(Intent.createChooser(shareIntent, "Share News With"))
+        }
         return binding.root
 
     }

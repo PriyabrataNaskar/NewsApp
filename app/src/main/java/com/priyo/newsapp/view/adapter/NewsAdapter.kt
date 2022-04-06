@@ -67,15 +67,16 @@ class NewsAdapter(private val mNewsData: List<Article>, mContext: Context) :
         }
 
         override fun onClick(view: View) {
-            if (view.id == itemView.id) {
-                val news: Article = mNewsData[adapterPosition]
+            val news: Article = mNewsData[adapterPosition]
 
-                val newsAuthorName: String? = news.author
-                val newsTitle: String? = news.title
-                val newsDescription: String? = news.description
-                val newsImageResource: String? = news.urlToImage
-                val newsPublishTime: String? = news.publishedAt
-                val content: String? = news.content
+            val newsAuthorName: String? = news.author
+            val newsTitle: String? = news.title
+            val newsDescription: String? = news.description
+            val newsImageResource: String? = news.urlToImage
+            val newsPublishTime: String? = news.publishedAt
+            val content: String? = news.content
+
+            if (view.id == itemView.id) {
                 // Create an nav direction with a destination
                 // Add the news details to the nav direction
                 val action = NewsListFragmentDirections.actionNewsListFragmentToNewsDetailsFragment(
@@ -93,7 +94,7 @@ class NewsAdapter(private val mNewsData: List<Article>, mContext: Context) :
 
                 //Intent shareIntent = new Intent();
                 shareIntent.type = "text/plain"
-                shareIntent.putExtra(Intent.EXTRA_TEXT, mNewsData[adapterPosition].title)
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "$newsTitle \nDescription:$newsDescription \nby- $newsAuthorName $newsImageResource")
                 //shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 view.context
                     .startActivity(Intent.createChooser(shareIntent, "Share News With"))
