@@ -6,9 +6,9 @@ A MVVM architecture based News App in android, developed with Kotlin, Retrofit, 
 
 ## In Pigeon you can find top news
  
-![HOME PAGE](https://github.com/PriyabrataNaskar/Pigeon/blob/master/screenshot/Home%20Page%20(Horizontal).png)
+![HOME PAGE](https://github.com/PriyabrataNaskar/NewsApp/blob/master/screenshots/Home%20Page%20(Horizontal).png)
 
-![News Page](https://github.com/PriyabrataNaskar/Pigeon/blob/master/screenshot/News%20Detail%20Page%20(Horizontal)%20(1).png)
+![News Page](https://github.com/PriyabrataNaskar/NewsApp/blob/master/screenshots/News%20Detail%20Page%20(Horizontal).png)
 
 ### You can view the design in [Figma Prototype](https://www.figma.com/proto/s0UUXrsQc1PdUmgHdAdGTR/News-App?node-id=0%3A1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=84%3A7)
 
