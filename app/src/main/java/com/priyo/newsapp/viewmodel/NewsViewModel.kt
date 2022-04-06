@@ -4,10 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.priyo.newsapp.model.ResponseModel
+import com.priyo.newsapp.model.data.ResponseModel
 import com.priyo.newsapp.model.repository.NewsRepository
 import com.priyo.newsapp.util.Resource
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

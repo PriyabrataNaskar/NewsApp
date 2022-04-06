@@ -5,17 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.priyo.newsapp.view.adapter.NewsAdapter
 import com.priyo.newsapp.databinding.FragmentNewsListBinding
-import com.priyo.newsapp.model.Article
-import com.priyo.newsapp.model.Source
+import com.priyo.newsapp.model.data.Article
 import com.priyo.newsapp.util.Resource
 import com.priyo.newsapp.viewmodel.NewsViewModel
 

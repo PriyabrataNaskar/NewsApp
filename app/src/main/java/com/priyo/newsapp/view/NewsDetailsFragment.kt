@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.priyo.newsapp.databinding.FragmentNewsDetailsBinding
-import com.priyo.newsapp.model.Article
+import com.priyo.newsapp.model.data.Article
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
