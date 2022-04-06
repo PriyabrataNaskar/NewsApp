@@ -1,6 +1,6 @@
 # Pigeon
 
-A MVVM architecture based News App in android, developed with Kotlin, Retrofit, Navigation Components.
+A MVVM architecture based News App in android, developed with Kotlin, Retrofit, Navigation Components, Shimmer for ProgressBar
 
 <img src="https://github.com/PriyabrataNaskar/Pigeon/blob/master/app/src/main/res/raw/pigeon_splash_image.gif" alt="Pigeon Logo" width="300"/>
 
@@ -62,6 +62,7 @@ All the response you will get ion JSON format.
 - [Lottie](https://github.com/airbnb/lottie-android) to play the animation
 - Navigation Components for Navigation
 - MVVM Architecture
+- [Shimmer](https://github.com/facebook/shimmer-android) to handle loading
 
 ## Acknowledgements
 
@@ -74,3 +75,4 @@ Thanks to these projects and libraries:
 - [GSON Library](https://github.com/google/gson)
 - [MDC](https://material.io/develop/android/docs/getting-started)
 - [Lottie](https://github.com/airbnb/lottie-android)
+- [Shimmer](https://github.com/facebook/shimmer-android)
