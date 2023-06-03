@@ -1,7 +1,7 @@
 package com.priyo.newsapp.model.api
 
+import com.priyo.newsapp.BuildConfig
 import com.priyo.newsapp.model.data.ResponseModel
-import com.priyo.newsapp.util.Constants
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -16,9 +16,8 @@ interface NewsAPIInterface {
      */
     @GET("v2/top-headlines")
     suspend fun getTopNews(
-        @Query("apiKey") apiKey: String = Constants.API_KEY,
+        @Query("apiKey") apiKey: String = BuildConfig.API_KEY,
         @Query("page") pageNumber: Int = 1,
         @Query("country") countryCode: String = "us",
-    ):
-            Response<ResponseModel>
+    ): Response<ResponseModel>
 }

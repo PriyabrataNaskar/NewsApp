@@ -4,7 +4,6 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities.*
-import android.os.Build
 import android.util.Log
 import androidx.lifecycle.*
 import com.priyo.newsapp.model.data.ResponseModel
@@ -18,8 +17,8 @@ import retrofit2.Response
  */
 class NewsViewModel(
     val newsRepository: NewsRepository,
-    application: Application
-    ): AndroidViewModel(application) {
+    application: Application,
+) : AndroidViewModel(application) {
     private val _topNews: MutableLiveData<Resource<ResponseModel>> = MutableLiveData()
     val topNews: LiveData<Resource<ResponseModel>> get() = _topNews
 
@@ -31,10 +30,10 @@ class NewsViewModel(
         getTopNews()
     }
 
-    private fun getTopNews(){
-        if (!hasInternetConnection()){
+    private fun getTopNews() {
+        if (!hasInternetConnection()) {
             _topNews.postValue(Resource.Error("No Internet Connection"))
-            Log.e(TAG,"No Internet Connection")
+            Log.e(TAG, "No Internet Connection")
             return
         }
         viewModelScope.launch {
@@ -44,9 +43,9 @@ class NewsViewModel(
         }
     }
 
-    private fun handleTopNews(response: Response<ResponseModel>): Resource<ResponseModel>{
-        if (response.isSuccessful){
-            response.body()?.let { responseResult->
+    private fun handleTopNews(response: Response<ResponseModel>): Resource<ResponseModel> {
+        if (response.isSuccessful) {
+            response.body()?.let { responseResult ->
                 return Resource.Success(responseResult)
             }
         }
@@ -55,7 +54,7 @@ class NewsViewModel(
 
     private fun hasInternetConnection(): Boolean {
         val connectivityManager = getApplication<Application>().getSystemService(
-            Context.CONNECTIVITY_SERVICE
+            Context.CONNECTIVITY_SERVICE,
         ) as ConnectivityManager
         val activeNetwork = connectivityManager.activeNetwork ?: return false
         val capabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
@@ -65,6 +64,5 @@ class NewsViewModel(
             capabilities.hasTransport(TRANSPORT_ETHERNET) -> true
             else -> false
         }
-        return false
     }
 }
